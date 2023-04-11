@@ -1,7 +1,7 @@
-﻿const string OPCION ="Ingrese qué acción quiere hacer: ", NOMBRE = "Ingrese el nombre del boxeador: ", PAIS = "Ingrese país: ", PESO = "Ingrese peso: ", P_GOLPES = "Ingrese la potencia de los golpes: ", V_PIERNAS = "Ingrese la velocidad de las piernas: ";
+﻿const string OPCION ="Ingrese qué acción quiere hacer: ", INTELIGENCIA = "Ingrese la inteligencia: ",NOMBRE = "Ingrese el nombre del boxeador: ", PAIS = "Ingrese país: ", PESO = "Ingrese peso: ", P_GOLPES = "Ingrese la potencia de los golpes: ", V_PIERNAS = "Ingrese la velocidad de las piernas: ";
 const string OPCIONES = "1. Cargar datos del boxeador 1\n2. Cargar datos del boxeador 2\n3. Pelear!\n4. Salir";
 string nombre, pais;
-int peso, potenciaGolpes, velocidadPiernas, opcion;
+int peso, potenciaGolpes, velocidadPiernas, inteligencia, opcion;
 Boxeador boxeador1 = new Boxeador();
 Boxeador boxeador2 = new Boxeador();
 
@@ -19,8 +19,9 @@ while (opcion!=4)
         peso = IngresarEntero(PESO);
         potenciaGolpes = IngresarEnteroRango(P_GOLPES, 1, 100);
         velocidadPiernas = IngresarEnteroRango(V_PIERNAS, 1, 100);
+        inteligencia = IngresarEnteroRango(INTELIGENCIA, 1, 100);
 
-        boxeador1 = new Boxeador(nombre,pais,peso,potenciaGolpes,velocidadPiernas);
+        boxeador1 = new Boxeador(nombre, pais, peso, potenciaGolpes, velocidadPiernas, inteligencia);
         break;
 
         case 2:
@@ -29,8 +30,9 @@ while (opcion!=4)
         peso = IngresarEntero(PESO);
         potenciaGolpes = IngresarEnteroRango(P_GOLPES, 1, 100);
         velocidadPiernas = IngresarEnteroRango(V_PIERNAS, 1, 100);
+        inteligencia = IngresarEnteroRango(INTELIGENCIA, 1, 100);
 
-        boxeador2 = new Boxeador(nombre,pais,peso,potenciaGolpes,velocidadPiernas);
+        boxeador2 = new Boxeador(nombre, pais, peso, potenciaGolpes, velocidadPiernas, inteligencia);
         break;
 
         case 3:
