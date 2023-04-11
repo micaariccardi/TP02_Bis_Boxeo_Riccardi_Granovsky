@@ -1,12 +1,12 @@
 ﻿const string OPCION ="Ingrese qué acción quiere hacer: ", NOMBRE = "Ingrese el nombre del boxeador: ", PAIS = "Ingrese país: ", PESO = "Ingrese peso: ", P_GOLPES = "Ingrese la potencia de los golpes: ", V_PIERNAS = "Ingrese la velocidad de las piernas: ";
-//HACER CONSTANTES PARA LOS RANGOS!!!
+const string OPCIONES = "1. Cargar datos del boxeador 1\n2. Cargar datos del boxeador 2\n3. Pelear!\n4. Salir";
 string nombre, pais;
 int peso, potenciaGolpes, velocidadPiernas, opcion;
 Boxeador boxeador1 = new Boxeador();
 Boxeador boxeador2 = new Boxeador();
 
 
-Console.WriteLine("MENSAJE CON OPCIONES :D");
+Console.WriteLine(OPCIONES);
 opcion=IngresarEnteroRango(OPCION, 1, 4);
 
 while (opcion!=4)
@@ -34,8 +34,7 @@ while (opcion!=4)
         break;
 
         case 3:
-        string ganador;
-        if(boxeador1.nombre == null || boxeador1.nombre == null)
+        if(boxeador1.nombre == "" || boxeador2.nombre == "")
         {
             Console.WriteLine("Datos insuficientes.");
         }
@@ -76,6 +75,9 @@ while (opcion!=4)
 
         break;
     }
+    Console.ReadKey();
+    Console.Clear();
+    Console.WriteLine(OPCIONES);
     opcion=IngresarEnteroRango(OPCION, 1, 4);
 
 }
@@ -87,7 +89,7 @@ double Diferencia(double num1, double num2)
 
 int IngresarEntero(string mensaje)
 {
-    Console.WriteLine(mensaje);
+    Console.Write(mensaje);
     return int.Parse(Console.ReadLine());
 }
 
