@@ -2,7 +2,8 @@
 //HACER CONSTANTES PARA LOS RANGOS!!!
 string nombre, pais;
 int peso, potenciaGolpes, velocidadPiernas, opcion;
-Boxeador boxeador1, boxeador2;
+Boxeador boxeador1 = new Boxeador();
+Boxeador boxeador2 = new Boxeador();
 
 
 Console.WriteLine("MENSAJE CON OPCIONES :D");
@@ -33,12 +34,56 @@ while (opcion!=4)
         break;
 
         case 3:
+        string ganador;
+        if(boxeador1.nombre == null || boxeador1.nombre == null)
+        {
+            Console.WriteLine("Datos insuficientes.");
+        }
+        else
+        {
+            double skill1 = boxeador1.ObtenerSkill();
+            double skill2 = boxeador2.ObtenerSkill();
+            double diferencia = Diferencia(skill1, skill2);
+            if (diferencia <= -30)
+            {
+                Console.WriteLine("Ganó " + boxeador2.nombre + " por KO");
+            }
+            else if (diferencia <= -10)
+            {
+                Console.WriteLine("Ganó " + boxeador2.nombre + " por puntos en fallo unánime");
+            }
+            else if (diferencia < 0 && diferencia > -10)
+            {
+                Console.WriteLine("Ganó " + boxeador2.nombre + " por puntos de fallo dividido");
+            }
+            else if (diferencia == 0)
+            {
+                Console.WriteLine("Empate");
+            }
+            else if (diferencia > 0 && diferencia < 10)
+            {
+                Console.WriteLine("Ganó " + boxeador1.nombre + " por puntos de fallo dividido");
+            }
+            else if (diferencia <= 10)
+            {
+                Console.WriteLine("Ganó " + boxeador1.nombre + " por puntos en fallo unánime");
+            }
+            else if (diferencia >= 30)
+            {
+                Console.WriteLine("Ganó " + boxeador1.nombre + " por KO");
+            }
+        }
+
         break;
     }
     opcion=IngresarEnteroRango(OPCION, 1, 4);
 
 }
 
+double Diferencia(double num1, double num2)
+{
+    return num1 - num2;
+}
 
 int IngresarEntero(string mensaje)
 {

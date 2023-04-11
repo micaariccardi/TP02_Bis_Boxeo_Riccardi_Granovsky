@@ -1,10 +1,13 @@
 public class Boxeador{
-    public string nombre{get;set;}
+    public string nombre{get;set;} = "";
     private string pais{get;set;}
     private int peso{get;set;}
     private int potenciaGolpes{get;set;}
     private int velocidadPiernas{get;set;}
+    public Boxeador()
+    {
 
+    }
     public Boxeador(string nom, string pa, int pe, int pg, int vp)
     {
         nombre = nom;
